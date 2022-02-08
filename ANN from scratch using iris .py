@@ -18,17 +18,6 @@ def to_one_hot(Y):
         binarized[i, Y[i]] = 1.
     return binarized
 
-#Convert one-hot encoding to array
-def from_one_hot(Y):
-    arr = np.zeros((len(Y), 1))
-
-    for i in range(len(Y)):
-        l = layer2[i]
-        for j in range(len(l)):
-            if(l[j] == 1):
-                arr[i] = j+1
-    return arr
-
 #sigmoid and its derivative
 def sigmoid(x):
     return 1/(1+np.exp(-x))
